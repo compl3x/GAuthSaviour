@@ -7,6 +7,14 @@ GAuthSaviour is a simple, cross-platform tool for retrieving the secret keys of 
 ## How to use
 If you have root over adb then simply execute the program with the `-d` argument (**this is what you want to do if you can boot only into recovery**). 
 
+##### Windows:
+
+1. Download release zip
+2. Unzip and `cd` into the folder in cmd
+3. Enter your required parameters with the prefix `gauthsaviour`,e.g:
+
+    ```gauthsaviour -w winauth-file.xml```
+
 If you want to do something more advanced with the software, see the parameters below.
 
 ## Parameters
