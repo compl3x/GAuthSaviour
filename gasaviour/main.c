@@ -60,7 +60,9 @@ void printAllAuths(char dbFile[]) {
 
 void main(int argc, char *argv[]) {
     printf("GAuthSaviour 1.0 by Michael Cowell (github:compl3x)");
-
+    char * fileName = NULL;
+    char * destFileName = NULL;
+    int isExport = 0;
     // Default behaviour
     if (argc == 1) {
         printf("\nRunning in default mode (reading from local file \"databases\")\n\n");
@@ -82,14 +84,20 @@ void main(int argc, char *argv[]) {
                 system("adb pull /data/data/com.google.android.apps.authenticator2/databases/databases");
             }
             else if (isEqual(argv[counter],"-w") && (counter+1 <= argc)) {
-                exportAuthsToWinAuth("databases",argv[counter+1]);
+                isExport = 1;
+                destFileName = argv[counter+1];
             }
             else if (isEqual(argv[counter],"-f") && (counter+1 <= argc) ) {
-                char* dbFile;
-                dbFile = argv[counter+1];
-                printf("\nLoading from file %s\n\n",dbFile);
-                printAllAuths(dbFile);
+                fileName = argv[counter+1];
             }
         }
     }
+
+    if (isExport) {
+        exportAuthsToWinAuth(fileName,destFileName);
+    }
+    else if (fileName != NULL) {
+        printAllAuths(fileName);
+    }
+
 }
