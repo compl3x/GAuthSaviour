@@ -10,6 +10,7 @@ If you have root over adb then simply execute the program with the `-d` argument
 ##### Windows:
 
 1. Download release zip
+2. *OPTIONAL: If you want to use the -d flag, you must move adb and associated DLL files into the same folder.*
 2. Unzip and `cd` into the folder in cmd
 3. Enter your required parameters with the prefix `gauthsaviour`,e.g:
 
