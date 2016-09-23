@@ -34,7 +34,7 @@ On windows, building is best done with the Code::Blocks project file included in
 
 If using Cygwin or another Unix-based environment, adapt the gcc example found [here](https://www.sqlite.org/howtocompile.html#compiling_the_command_line_interface), eg:
 
-```gcc gasaviour.c sqlite3.c -lpthread -ldl -o gauthsaviour```
+```gcc main.c sqlite3.c -lpthread -ldl -o gauthsaviour```
 
 ## Contributions
 If there's an issue with any of the code, feel free to make a pull request.
