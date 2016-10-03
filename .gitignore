@@ -1,3 +1,5 @@
 gasaviour/bin
 gasaviour/obj
 gasaviour/doxygen
+gasaviour/databases
+*.layout
