@@ -21,23 +21,7 @@ Usage:  gasaviour.exe [-d] [-f <file>] [-w <file>]
 ```
 
 
-<<<<<<< HEAD
 #### Building
-=======
-If you want to do something more advanced with the software, see the parameters below.
-
-## Parameters
-
-```-d``` - Pull database via adb Currently disabled
-
-```-w <file>``` - Convert database to WinAuth file
-
-```-f <file>``` - Load database from filename
-
-Default behaviour is to print all auths from the file `database` in the current dictionary.
-
-## Building
->>>>>>> 2da5fc43b5c7216ceaf18b5470fb6ad4f520edde
 
 On windows, building is best done with the Code::Blocks project file included in the repository. 
 
