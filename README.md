@@ -1,32 +1,27 @@
 # GAuthSaviour
+![GAuthSaviour Screenshot](http://i.imgur.com/Cttb4gn.png)
 
 GAuthSaviour is a simple, cross-platform tool for retrieving the secret keys of your Google Authenticator installation. It can retrieve the GAuth database via adb, as well as extract secrets from existing databases and supports exporting to a WinAuth-compatible file.
 
-## How to use
-If you have root over adb then simply execute the program with the `-d` argument (**this is what you want to do if you can boot only into recovery**). 
+#### Usage
 
-##### Windows:
+```
+Usage:  gasaviour.exe [-d] [-f <file>] [-w <file>]
 
-1. Download release zip
-2. *OPTIONAL: If you want to use the -d flag, you must move adb and associated DLL files into the same folder.*
-2. Unzip and `cd` into the folder in cmd
-3. Enter your required parameters with the prefix `gauthsaviour`,e.g:
+        -d              Dump database via adb (must have adb in directory of PATH)
+        -f <file>       Read database from <file>
+        -w <file>       Convert database to Winauth <file>
+        
+        Examples:
+        
+        gasaviour.exe -f temp                   Read database file "temp"
+        gasaviour.exe -f temp -w auth.xml       Read database file "temp" and convert to winauth "auth.xml"
+        gasaviour.exe -d -w auth.xml            Read database via adb and convert to winauth "auth.xml"
+        gasaviour.exe -w auth.xml               Read database file "databases" and convert to winauth "auth.xml"
+```
 
-    ```gauthsaviour -w winauth-file.xml```
 
-If you want to do something more advanced with the software, see the parameters below.
-
-## Parameters
-
-~~```-d``` - Pull database via adb~~ Currently disabled
-
-```-w <file>``` - Convert database to WinAuth file
-
-```-f <file>``` - Load database from filename
-
-Default behaviour is to print all auths from the file `database` in the current dictionary.
-
-## Building
+#### Building
 
 On windows, building is best done with the Code::Blocks project file included in the repository. 
 
@@ -34,5 +29,6 @@ If using Cygwin or another Unix-based environment, adapt the gcc example found [
 
 ```gcc main.c sqlite3.c -lpthread -ldl -o gauthsaviour```
 
-## Contributions
-If there's an issue with any of the code, feel free to make a pull request.
+#### Legal
+
+Check LICENSE.md
