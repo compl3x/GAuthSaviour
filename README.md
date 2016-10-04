@@ -18,7 +18,7 @@ If you want to do something more advanced with the software, see the parameters 
 
 ## Parameters
 
-~~```-d``` - Pull database via adb~~ Currently disabled
+```-d``` - Pull database via adb Currently disabled
 
 ```-w <file>``` - Convert database to WinAuth file
 
