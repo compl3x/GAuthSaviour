@@ -5,7 +5,7 @@
 
 
 #ifndef VERSION
-    #define VERSION 1.25
+    #define VERSION "1.2.7.0"
 #endif // VERSION
 
 /** String comparison
@@ -69,7 +69,7 @@ void printAllAuths(char dbFile[]) {
 }
 
 void main(int argc, char *argv[]) {
-    printf("GAuthSaviour %g by Michael Cowell (github/compl3x) (@Complex360)",VERSION);
+    printf("GAuthSaviour %s by Michael Cowell (github/compl3x) (@Complex360)",VERSION);
     char * fileName = NULL;
     char * destFileName = NULL;
 
@@ -86,16 +86,17 @@ void main(int argc, char *argv[]) {
             // This currently doesn't check if the file exists, and yeah yeah I know system sucks but so does life.
             printf("\n\n");
             system("adb pull /data/data/com.google.android.apps.authenticator2/databases/databases");
+            fileName = "databases";
             break;
         }
     }
 
     if (destFileName != NULL) {
-        printf("\n Converting %s to %s",fileName,destFileName);
+        printf("\n[+] Converting %s to %s",fileName,destFileName);
         exportAuthsToWinAuth(fileName,destFileName);
     }
     else if (fileName != NULL) {
-        printf("\n Printing auths from %s",fileName);
+        printf("\n[+] Printing auths from %s",fileName);
         printAllAuths(fileName);
     }
     else {
