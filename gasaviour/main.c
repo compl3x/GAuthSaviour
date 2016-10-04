@@ -5,7 +5,7 @@
 
 
 #ifndef VERSION
-    #define VERSION 1.2
+    #define VERSION 1.25
 #endif // VERSION
 
 /** String comparison
@@ -74,13 +74,18 @@ void main(int argc, char *argv[]) {
     char * destFileName = NULL;
 
     int arg;
-    while ((arg = getopt(argc, argv, "df:w:")) != -1) {
+    while ((arg = getopt(argc, argv, "df:w:d")) != -1) {
         switch(arg) {
         case 'f':
             fileName = optarg;
             break;
         case 'w':
             destFileName = optarg;
+            break;
+        case 'd':
+            // This currently doesn't check if the file exists, and yeah yeah I know system sucks but so does life.
+            printf("\n\n");
+            system("adb pull /data/data/com.google.android.apps.authenticator2/databases/databases");
             break;
         }
     }
@@ -94,8 +99,9 @@ void main(int argc, char *argv[]) {
         printAllAuths(fileName);
     }
     else {
-        printf("\n\nUsage:\t%s [-f <file>] [-w <file>]",argv[0]);
-        printf("\n\n\t-f <file>\tRead database from <file>");
+        printf("\n\nUsage:\t%s [-d] [-f <file>] [-w <file>]",argv[0]);
+        printf("\n\n\t-d\t\tDump database via adb (must have adb in directory of PATH)");
+        printf("\n\t-f <file>\tRead database from <file>");
         printf("\n\t-w <file>\tConvert database to Winauth <file>\n");
     }
 
