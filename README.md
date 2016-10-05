@@ -8,7 +8,7 @@ GAuthSaviour is a simple, cross-platform tool for retrieving the secret keys of 
 ```
 Usage:  gasaviour.exe [-d] [-f <file>] [-w <file>]
 
-        -d              Dump database via adb (must have adb in directory of PATH)
+        -d              Dump database via adb (must have adb in directory or PATH)
         -f <file>       Read database from <file>
         -w <file>       Convert database to Winauth <file>
         
