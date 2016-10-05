@@ -4,3 +4,5 @@ gasaviour/doxygen
 gasaviour/databases
 *.layout
 gasaviour/gasaviour.layout
+*.layout
+*.sh
