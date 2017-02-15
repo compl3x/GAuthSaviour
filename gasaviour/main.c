@@ -52,7 +52,7 @@ void extractAuths(char dbFile[], char destFile[]) {
 }
 
 void main(int argc, char *argv[]) {
-    printf("GAuthSaviour %s by Michael Cowell (github/compl3x) (@Complex360)",VERSION);
+    printf("GAuthSaviour %s by Michael Cowell (github/michaelcowell)",VERSION);
     char * fileName = NULL;
     char * destFileName = NULL;
     int arg;
